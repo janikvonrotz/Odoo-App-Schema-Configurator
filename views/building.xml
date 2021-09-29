@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="building_list" model="ir.ui.view">
+    <field name="name">Building List</field>
+    <field name="model">schematic_configurator.building</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="partner_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="bulding_form" model="ir.ui.view" >
+    <field name="name">Building Form</field>
+    <field name="model">schematic_configurator.building</field>
+    <field name="arch" type="xml">
+      <form string="Bulding Form">
+        <sheet>
+          <p>Building</p>
+          <div class="oe_title">
+            <div class="oe_edit_only">
+              <label for="name"/>
+            </div>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <field name="partner_id"/>
+            </group>
+          </div>
+          <group>
+            <field name="level_ids" context="{'default_building_id': id}">
+              <tree editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <button name="action_show_details" class="oe_link" type="object" icon="fa-list" string="Details" />
+              </tree>
+            </field>
+          </group>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="message_ids" widget="mail_thread"/>
+          <field name="activity_ids" widget="mail_activity"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+</odoo>

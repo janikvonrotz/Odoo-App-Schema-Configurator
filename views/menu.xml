@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="building_action" model="ir.actions.act_window">
+    <field name="name">Buildings</field>
+    <field name="res_model">schematic_configurator.building</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="level_action" model="ir.actions.act_window">
+    <field name="name">Levels</field>
+    <field name="res_model">schematic_configurator.level</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="room_action" model="ir.actions.act_window">
+    <field name="name">Rooms</field>
+    <field name="res_model">schematic_configurator.room</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="graphiql_action" model="ir.actions.act_url">
+    <field name="name">GraphiQL</field>
+    <field name="target">self</field>
+    <field name="url">/graphiql/demo</field>
+  </record>
+
+  <menuitem name="Schematic Configurator" id="menu_root" web_icon="schematic_configurator,static/description/icon.png"/>
+
+  <menuitem name="Objects" sequence="1" id="object_menu" parent="menu_root"/>
+  <menuitem name="Configuration" sequence="2" id="configuration_menu" parent="menu_root"/>
+
+  <menuitem name="Buildings" sequence="1" id="building_menu" parent="object_menu" action="building_action"/>
+  <menuitem name="Levels" sequence="2" id="level_menu" parent="object_menu" action="level_action"/>
+  <menuitem name="Rooms" sequence="3" id="room_menu" parent="object_menu" action="room_action"/>
+
+  <menuitem name="GraphiQL" sequence="1" id="graphiql_menu" parent="configuration_menu" action="graphiql_action"/>
+
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+
+  <record id="building0" model="schematic_configurator.building">
+    <field name="name">Kantonsbahnhof Altdorf</field>
+  </record>
+
+</odoo>
