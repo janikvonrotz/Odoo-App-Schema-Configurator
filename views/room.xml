@@ -9,6 +9,8 @@
         <field name="name"/>
         <field name="level_id"/>
         <field name="building_id"/>
+        <field name="installation_count"/>
+        <field name="panel_count"/>
       </tree>
     </field>
   </record>
@@ -19,6 +21,14 @@
     <field name="arch" type="xml">
       <form>
         <sheet>
+          <div class="oe_button_box" name="button_box">
+            <button name="view_installation_ids" type="object" class="oe_stat_button" icon="fa-files-o">
+              <field string="Installations" name="installation_count" widget="statinfo"/>
+            </button>
+            <button name="view_panel_ids" type="object" class="oe_stat_button" icon="fa-files-o">
+              <field string="Panels" name="panel_count" widget="statinfo"/>
+            </button>
+          </div>
           <p>Room</p>
           <div class="oe_title">
             <div class="oe_edit_only">

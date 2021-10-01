@@ -11,7 +11,7 @@
     'version': '14.0.1.0.0',
     'license': 'AGPL-3',
     
-    'depends': ['contacts', 'graphql_base', 'stock'],
+    'depends': ['contacts', 'graphql_base', 'stock', 'web_widget_numeric_step'],
 
     'data': [
         'security/schematic_configurator_security.xml',
@@ -20,6 +20,9 @@
         'views/building.xml',
         'views/level.xml',
         'views/room.xml',
+        'views/installation.xml',
+        'views/panel.xml',
+        'views/module.xml',
     ],
 
     'demo': [

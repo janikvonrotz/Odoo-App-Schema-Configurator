@@ -10,3 +10,10 @@ class Installation(models.Model):
 
     # fields
     name = fields.Char()
+    room_id = fields.Many2one('schematic_configurator.room', required=True)
+    amount_panels = fields.Integer()
+    amount_blinds = fields.Integer()
+    amount_electronic_windows = fields.Integer()
+    amount_switched_sockets = fields.Integer()
+    amount_lamps = fields.Integer()
+    amount_dimable_lamps = fields.Integer()

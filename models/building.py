@@ -11,4 +11,4 @@ class Building(models.Model):
     # fields
     name = fields.Char()
     partner_id = fields.Many2one('res.partner', required=True)
-    level_ids = fields.One2many('schematic_configurator.level', 'building_id')
+    level_ids = fields.One2many('schematic_configurator.level', 'building_id', string="Levels")
